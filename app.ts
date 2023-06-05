@@ -13,12 +13,8 @@ console.log(user[0]);
 console.log(user[1]); 
 // *22222222222
 
-interface MyObject {
-  property: string;
-}
-
-function filterObjectsByProperty(objects: MyObject[], value: string): MyObject[] {
-  const filteredObjects: MyObject[] = [];
+function filterObjectsByProperty(objects: { property: string }[], value: string): { property: string }[] {
+  const filteredObjects: { property: string }[] = [];
 
   for (const obj of objects) {
     if (obj.property === value) {
@@ -29,8 +25,7 @@ function filterObjectsByProperty(objects: MyObject[], value: string): MyObject[]
   return filteredObjects;
 }
 
-
-const myObjects: MyObject[] = [
+const myObjects = [
   { property: 'A' },
   { property: 'B' },
   { property: 'C' },
@@ -39,6 +34,7 @@ const myObjects: MyObject[] = [
 
 const filteredObjects = filterObjectsByProperty(myObjects, 'A');
 console.log(filteredObjects);
+
 // !333333333333333
 function findObjectByProperty(objects: any[], property: string, propertyValue: any): any | undefined {
   for (let obj of objects) {

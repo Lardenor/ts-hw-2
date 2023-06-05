@@ -3,6 +3,7 @@ let user;
 user = ['John', 25];
 console.log(user[0]);
 console.log(user[1]);
+// *22222222222
 function filterObjectsByProperty(objects, value) {
     const filteredObjects = [];
     for (const obj of objects) {
